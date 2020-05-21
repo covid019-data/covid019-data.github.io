@@ -104,6 +104,10 @@
     text-align: center;
 }
 
+.country-footer > a {
+ width: 100%;
+}
+
 .searchCountry {
     padding: 0 15px 15px 0;    
 }

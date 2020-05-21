@@ -28,7 +28,7 @@ xhttp.onload = function() {
         const h =`
             <div class="smallbox ${bgType}">
                 <h1>${addCommas(val)}</h1>
-                <p>${key}</p>
+                <p>${camelPad(key)}</p>
             </div>        
         `
         worldStats.innerHTML += h        
@@ -57,10 +57,10 @@ function loadData() {
                 <div class="country">
                     <div class="country-inner">
                         <h3>${country["Country"]}</h3>    
-                        <p>Infected: <span class="color-default">${country["TotalConfirmed"]}</span></p>
-                        <p>Deaths: <span class="color-danger">${country["TotalDeaths"]}</span></p>
+                        <p>Infected: <span class="color-default">${addCommas(country["TotalConfirmed"])}</span></p>
+                        <p>Deaths: <span class="color-danger">${addCommas(country["TotalDeaths"])}</span></p>
                     </div>
-                    <div class="country-footer"><a href="./viewcountry.html?q='Andorra'">View full details</a></div>
+                    <div class="country-footer"><a href="./viewcountry.html?q=${country['Country']}">View full details</a></div>
                 </div>
         `
         countriesCnt.innerHTML += h   
@@ -122,27 +122,15 @@ searchCountryInput.addEventListener("keyup", (evt) => {
                 <div class="country">
                     <div class="country-inner">
                         <h3>${country["Country"]}</h3>    
-                        <p>Infected: <span class="color-default">${country["TotalConfirmed"]}</span></p>
-                        <p>Deaths: <span class="color-danger">${country["TotalDeaths"]}</span></p>
+                        <p>Infected: <span class="color-default">${addCommas(country["TotalConfirmed"])}</span></p>
+                        <p>Deaths: <span class="color-danger">${addCommas(country["TotalDeaths"])}</span></p>
                     </div>
-                    <div class="country-footer"><a href="./viewcountry.html?q='Andorra'">View full details</a></div>
+                    <div class="country-footer"><a href="./viewcountry.html?q=${country['Country']}">View full details</a></div>
                 </div>
         `
         countriesCnt.innerHTML += h   
     }
 })
-
-function sepCaps(word = "") {
-    let res = ""
-
-    for (var index = 0; index < word.length; index++) {
-        var el = word[index];
-
-        if(index != 0 && el) {
-
-        }        
-    }
-}
 
 function addCommas(nStr){
 nStr += '';
@@ -156,3 +144,6 @@ x1 = x1.replace(rgx, '$1' + ',' + '$2');
 return x1 + x2;
 }
 
+function camelPad(str){ 
+return str.replace(/([A-Z]+)([A-Z][a-z])/g, ' $1 $2').replace(/([a-z\d])([A-Z])/g, '$1 $2').replace(/([a-zA-Z])(\d)/g, '$1 $2') .replace(/^./, function(str){ return str.toUpperCase(); }).trim(); 
+}
