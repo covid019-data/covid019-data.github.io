@@ -27,7 +27,7 @@ xhttp.onload = function() {
 
         const h =`
             <div class="smallbox ${bgType}">
-                <h1>${val}</h1>
+                <h1>${addCommas(val)}</h1>
                 <p>${key}</p>
             </div>        
         `
@@ -144,6 +144,15 @@ function sepCaps(word = "") {
     }
 }
 
-function commaNums(num="") {
-    
+function addCommas(nStr){
+nStr += '';
+var x = nStr.split('.');
+var x1 = x[0];
+var x2 = x.length > 1 ? '.' + x[1] : '';
+var rgx = /(\d+)(\d{3})/;
+while (rgx.test(x1)) {
+x1 = x1.replace(rgx, '$1' + ',' + '$2');
 }
+return x1 + x2;
+}
+
