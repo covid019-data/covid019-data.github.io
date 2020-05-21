@@ -9,7 +9,7 @@ var covid19 = {
 }
 
 const xhttp = new XMLHttpRequest()
-xhttp.open("GET", "./summary.json")
+xhttp.open("GET", "https://api.covid19api.com/summary")
 
 xhttp.onload = function() {
     covid19 = JSON.parse(xhttp.response)
