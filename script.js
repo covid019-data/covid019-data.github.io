@@ -2,14 +2,17 @@
 
 const log = console.log
 var start = 0;
-var end = 4;
+var end = 14;
 var covid19 = {
     Global: {},
     Countries: []
 }
 
+var all
+var lastEl
+var io
+
 const xhttp = new XMLHttpRequest()
-xhttp.open("GET", "https://api.covid19api.com/summary")
 
 xhttp.onload = function() {
     covid19 = JSON.parse(xhttp.response)
@@ -39,14 +42,37 @@ xhttp.onload = function() {
     loadData.running = true
     loadData()
     loadData.running = false
+
+    all = document.querySelectorAll(".country")
+    lastEl = all[all.length - 1]
+
+    io.observe(lastEl)
 }
 
 xhttp.onerror = function() {
     log("error")
 }
-xhttp.send()
 
-
+window.addEventListener("DOMContentLoaded", (evt) => {
+    io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                try{
+                    if(loadData.running == false) {
+                        loadData()
+                    } else {}
+                } catch(err) {}            
+                io.unobserve(lastEl)
+                all = document.querySelectorAll(".country")
+                lastEl = all[all.length - 1]
+                io.observe(lastEl)
+            }
+        })
+    })
+    
+    xhttp.open("GET", "https://api.covid19api.com/summary")
+    xhttp.send()
+})
 
 function loadData() {
     for(var index = 0; index < end ; index++) {
@@ -67,31 +93,7 @@ function loadData() {
     }
     loadData.running = false
 }
-
 loadData.running = true
-
-
-const all = document.querySelectorAll(".country")
-var lastEl = all[all.length - 1]
-
-const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            io.unobserve(lastEl)
-            try{
-                if(loadData.running == false) {
-                    loadData()
-                } else {}
-            } catch(err) {}            
-            const all = document.querySelectorAll(".country")
-            lastEl = all[all.length - 1]
-            io.observe(lastEl)
-        }
-    })
-})
-
-io.observe(lastEl)
-
 
 searchCountryInput.addEventListener("keyup", (evt) => {
     const val = evt.target.value
@@ -132,18 +134,3 @@ searchCountryInput.addEventListener("keyup", (evt) => {
     }
 })
 
-function addCommas(nStr){
-nStr += '';
-var x = nStr.split('.');
-var x1 = x[0];
-var x2 = x.length > 1 ? '.' + x[1] : '';
-var rgx = /(\d+)(\d{3})/;
-while (rgx.test(x1)) {
-x1 = x1.replace(rgx, '$1' + ',' + '$2');
-}
-return x1 + x2;
-}
-
-function camelPad(str){ 
-return str.replace(/([A-Z]+)([A-Z][a-z])/g, ' $1 $2').replace(/([a-z\d])([A-Z])/g, '$1 $2').replace(/([a-zA-Z])(\d)/g, '$1 $2') .replace(/^./, function(str){ return str.toUpperCase(); }).trim(); 
-}

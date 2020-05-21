@@ -66,3 +66,12 @@ input {
 input:click {
     border-color: var(--mainColor);
 }
+
+table {
+    width: 100%;
+}
+
+table td {
+    border-top: 2px solid #f4f4f4;
+    padding: 8px;
+}

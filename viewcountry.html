@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta charset="UTF-8">
 
 <meta name="title" content="COVID-19 Data">
 <meta name="description" content="Displays COVID-19 data on all countries.">
@@ -21,12 +22,23 @@
     <header>
         <div class="title-bar"><h2>COVID-19</h2></div>
     </header>
-    <div class="container">
-        <div><h1><span class="flag"></span>Andorra</h1></div>
+    <div class="container viewCountryCnt">
+        <div><h1 id="countryName"><span class="flag" id="flag"></span> </h1></div>
+        <div class="divider"></div>
+
+        <div>
+            <div><h2 style="display: inline;">Stats </h2>as at <span id="date"></span></div>
+            <div class="box">
+                <table>
+                    <tbody id="tBodyStats">
+                        <tr><td></td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>            
+        </div>
     </div>
 
-    <script>
-        const url = new URL(document.location)
-        console.log(url)
-    </script>
+    <script src="./utils.js"></script>
+    <script src="./data.js"></script>    
+    <script src="./viewcountry.js"></script>
 </body>

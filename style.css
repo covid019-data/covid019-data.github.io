@@ -111,3 +111,27 @@
 .searchCountry {
     padding: 0 15px 15px 0;    
 }
+
+table td {
+    border-top: 3px solid #f4f4f4;
+}
+
+.box {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top: 2px solid var(--mainColor);
+
+    background: white;
+}
+
+.viewCountryCnt {
+    width: 75%;
+}
+
+.leftTd {
+    width: 43%;
+}
+
+.rightTd {
+    font-weight: bold;
+}

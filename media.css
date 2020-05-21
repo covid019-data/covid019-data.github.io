@@ -13,6 +13,10 @@
     .smallbox {
         width: 43.98%;
     }
+
+    .viewCountryCnt {
+        width: 100%;
+    }
 }
 
 @media(max-width: 499px) {
