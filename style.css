@@ -1,0 +1,109 @@
+/* Colors */
+.bg-green {
+    background: green;
+}
+
+.bg-default {
+    background: var(--mainColor);
+}
+
+.bg-danger {
+    background: red;
+}
+
+.color-danger {
+    color: red;
+}
+
+.color-default {
+    color: var(--mainColor)
+}
+/* */
+
+.title-bar {
+    padding: 20px 0 20px 20px;
+}
+
+.container {
+    width: 100%;
+    padding: 4px 20px 0 20px;
+    box-sizing: border-box;
+}
+
+.smallbox {
+    padding: 10px;
+    color: white;
+    border-radius: 2px;
+    margin: 0 2px 2px 2px;
+    width: 14.83%;
+}
+
+.smallbox h1 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.smallbox p {
+    margin: 2px 0 2px 0;
+    white-space: nowrap;
+}
+
+.worldStatsContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+    /*display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(298px, 1fr));
+    justify-content: space-around;
+    grid-gap: 10px;*/
+
+}
+
+.divider {
+    height: 1px;
+    background: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.countriesCnt {
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.country {
+    position: relative;
+    background: white;
+    box-shadow: 0 2px 3px 0 gray;
+    /* margin: 0 2px 2px 2px; */
+
+    flex-grow: 1;
+
+    margin: 5px 4px 4px 3px;
+    width: 239px;
+
+}
+
+.country-inner {
+    padding: 11px;
+}
+
+.country-inner h1, h3, h2, h4, h5 , h6 {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.country-inner p {
+    margin: 2px 0 2px 0;
+    white-space: nowrap;
+}
+
+.country-footer {
+    text-align: center;
+}
+
+.searchCountry {
+    padding: 0 15px 15px 0;    
+}

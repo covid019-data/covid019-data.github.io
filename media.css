@@ -1,0 +1,23 @@
+@media(max-width: 500px) {
+    .worldStatsContainer {
+        //flex-direction: column;
+    }
+
+    .smallbox {
+        width: 43.98%;
+    }
+}
+
+
+@media(max-width: 1200px) {
+    .smallbox {
+        width: 43.98%;
+    }
+}
+
+@media(max-width: 499px) {
+    .smallbox {
+        width: 94%;
+    }
+}
+
