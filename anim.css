@@ -1,0 +1,31 @@
+.circle {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    margin: 1px 50% 1px 50%; box-sizing: border-box;
+}
+
+.circle-ring {
+    position: absolute;
+    border-radius: 50%;
+    height: inherit;
+    width: inherit;
+    border: 3px solid var(--mainColor);
+    border-color: var(--mainColor) transparent transparent transparent;
+    background: transparent;    
+
+    animation-name: circleSpin;
+    animation-duration: 0.5s;
+    animation-delay: 0s; // 1.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes circleSpin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

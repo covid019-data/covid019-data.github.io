@@ -43,6 +43,9 @@ xhttp.onload = function() {
     loadData()
     loadData.running = false
 
+    loading1.classList.add("close")
+    loading2.classList.add("close")
+
     all = document.querySelectorAll(".country")
     lastEl = all[all.length - 1]
 
@@ -54,6 +57,8 @@ xhttp.onerror = function() {
 }
 
 window.addEventListener("DOMContentLoaded", (evt) => {
+    
+
     io = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

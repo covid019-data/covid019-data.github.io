@@ -13,6 +13,8 @@
 <link type="text/css" rel="stylesheet" href="./style.css" />
 <link type="text/css" rel="stylesheet" href="./media.css" />
 
+<link type="text/css" rel="stylesheet" href="./anim.css" />
+
 <title>COVID-19 Data</title>
 
 <style>
@@ -24,11 +26,21 @@
     </header>
     <div class="container viewCountryCnt">
         <div><h1 id="countryName"><span class="flag" id="flag"></span> </h1></div>
+
+          <div class="circle" id="loading1">
+            <div class="circle-ring"></div>
+          </div>
+
         <div class="divider"></div>
 
         <div>
             <div><h2 style="display: inline;">Stats </h2>as at <span id="date"></span></div>
             <div class="box">
+
+          <div class="circle" id="loading2">
+            <div class="circle-ring"></div>
+          </div>
+
                 <table>
                     <tbody id="tBodyStats">
                         <tr><td></td><td></td></tr>

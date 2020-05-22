@@ -40,6 +40,10 @@ xhttp.onload = function() {
                 <tr><td class="leftTd">New Recovered</td><td class="rightTd">${addCommas(NewRecovered)}</td></tr>
                 <tr><td class="leftTd">Total Recovered</td><td class="rightTd">${addCommas(TotalRecovered)}</td></tr>
             `
+             // remove loading
+             loading1.classList.add("close")
+             loading2.classList.add("close")
+
             // set flag
             flag .innerHTML = `${flags[CountryCode].emoji} `
 

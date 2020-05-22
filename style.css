@@ -1,3 +1,7 @@
+.close {
+ display: none; 
+}
+
 /* Colors */
 .bg-green {
     background: green;
