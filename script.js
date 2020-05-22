@@ -43,8 +43,10 @@ xhttp.onload = function() {
     loadData()
     loadData.running = false
 
-    loading1.classList.add("close")
-    loading2.classList.add("close")
+    try {
+        loading1.classList.add("close")
+        loading2.classList.add("close")
+    } catch(err) {}
 
     all = document.querySelectorAll(".country")
     lastEl = all[all.length - 1]
@@ -75,7 +77,7 @@ window.addEventListener("DOMContentLoaded", (evt) => {
         })
     })
     
-    xhttp.open("GET", "https://api.covid19api.com/summary")
+    xhttp.open("GET", url)
     xhttp.send()
 })
 
