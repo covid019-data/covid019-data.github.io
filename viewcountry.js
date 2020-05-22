@@ -41,6 +41,7 @@ xhttp.onload = function() {
                 <tr><td class="leftTd">Total Recovered</td><td class="rightTd">${addCommas(TotalRecovered)}</td></tr>
             `
              // remove loading
+
              loading1.classList.add("close")
              loading2.classList.add("close")
 
@@ -48,7 +49,8 @@ xhttp.onload = function() {
             flag .innerHTML = `${flags[CountryCode].emoji} `
 
             date.innerHTML = country["Date"];
-            tBodyStats.innerHTML = h
+            tBodyStats.innerHTML = h;
+            break; 
         }
     }
 }
