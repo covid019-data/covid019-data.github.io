@@ -77,7 +77,7 @@ window.addEventListener("DOMContentLoaded", (evt) => {
         })
     })
     
-    xhttp.open("GET", url)
+    xhttp.open("GET", covidApi)
     xhttp.send()
 })
 

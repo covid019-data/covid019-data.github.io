@@ -1,7 +1,3 @@
-// const url = "./summary.json";
-
-const url = "https://api.covid19api.com/summary";
-
 const flags = {
   AC: {
     code: "AC",

@@ -11,7 +11,7 @@ countryToDisplay = countryToDisplay.split("%20").join(" ")
 countryName.innerHTML = `<span class="flag" id="flag"></span>${countryToDisplay}`
 
 const xhttp = new XMLHttpRequest()
-xhttp.open("GET",  "https://api.covid19api.com/summary")
+xhttp.open("GET", covidApi)
 
 xhttp.onload = function() {
     covid19 = JSON.parse(xhttp.response)

@@ -1,3 +1,7 @@
+// const covidApi = "./summary.json";
+
+const covidApi = "https://api.covid19api.com/summary";
+
 function addCommas(nStr){
     nStr += '';
     var x = nStr.split('.');
