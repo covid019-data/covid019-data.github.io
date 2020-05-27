@@ -14,18 +14,19 @@
     border-color: var(--mainColor) transparent transparent transparent;
     background: transparent;    
 
-    animation-name: circleSpin;
-    animation-duration: 0.5s;
-    animation-delay: 0s; // 1.2s;
-    animation-iteration-count: infinite;
+    //animation-name: circleSpin;
+    //animation-duration: 0.5s;
+    //animation-delay: 0s; // 1.2s;
+    //animation-iteration-count: infinite;
+    animation: circleSpin infinite 0.5s linear; 
 }
 
 @keyframes circleSpin {
-    0% {
+    from {
         transform: rotate(0);
     }
 
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }

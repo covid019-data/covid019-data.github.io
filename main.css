@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    font-family: "Merriweather", serif;
+    font-family: "Merriweather Regular", serif;
     background-color: var(--bodyBgColor);
     display: flex;
     flex-direction: column;

@@ -2,6 +2,10 @@
  display: none !important; 
 }
 
+.pad-right-8 {
+    padding-right: 8px; 
+}
+
 /* Colors */
 .bg-green {
     background: green;
@@ -13,6 +17,18 @@
 
 .bg-danger {
     background: red;
+}
+
+.bg-black {
+   background: black; 
+}
+
+.color-black {
+   color: black;
+}
+
+.color-gray {
+    color: gray; 
 }
 
 .color-danger {
@@ -138,4 +154,34 @@ table td {
 
 .rightTd {
     font-weight: bold;
+}
+
+
+.info {
+    padding: 2px 5px;
+    border: 1px solid #003f63;
+    border-radius: 3px;
+    background: #3c8dbc;
+    color: white;
+    //box-shadow: 0 3px 5px black;
+    
+    //width: 500px;
+    z-index: 1000;
+    position: absolute;
+
+    transition: ease-in 1s ease-out;
+    top: 2px; right: 0; margin: 3px; 
+}
+
+.info h3 {
+    margin: 3px 0 2px 0;
+}
+
+.info-danger {
+    background: red;
+    border-color: red;
+}
+
+.float-right {
+   float: right; 
 }

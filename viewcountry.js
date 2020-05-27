@@ -57,7 +57,20 @@ xhttp.onload = function() {
     }
 }
 
-xhttp.onerror = function() {
+xhttp.onerror = function(e) {
+
+                info.innerHTML = `
+                    <h3>Error <span onclick="return closeInfo()" class="color-black float-right">x</span><span onclick="return reloadPage()" class="float-right color-black pad-right-8">&#8635</span></h3>
+                    Error occurred. Try refreshing the page. 
+                `
+                info.classList.add("info-danger")
+                info.classList.remove("close")
+
+    try {
+        loading1.classList.add("close")
+        loading2.classList.add("close")
+    } catch(err) {}
+    
     log("error")
 }
 xhttp.send()
