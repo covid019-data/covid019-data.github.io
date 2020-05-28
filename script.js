@@ -119,7 +119,7 @@ function loadData() {
 loadData.running = true
 
 searchCountryInput.addEventListener("keyup", (evt) => {
-    const val = evt.target.value
+    const val = evt.target.value.toLowerCase()
 
     // search country
 
@@ -128,7 +128,7 @@ searchCountryInput.addEventListener("keyup", (evt) => {
 
     for (var index = 0; index < countries.length; index++) {
         var country = countries[index];
-        if(country.Country.startsWith(val)) {
+        if(country.Country.toLowerCase().startsWith(val)) {
             searchRes.push(country)
         }
     }

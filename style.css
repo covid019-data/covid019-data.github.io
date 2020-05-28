@@ -40,6 +40,10 @@
 }
 /* */
 
+a:link, a:visited {
+   color: white; 
+}
+
 .title-bar {
     padding: 20px 0 20px 20px;
 }
