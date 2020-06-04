@@ -106,8 +106,8 @@ function loadData() {
                 <div class="country">
                     <div class="country-inner">
                         <h3>${country["Country"]}</h3>    
-                        <p>Infected: <span class="color-default">${addCommas(country["TotalConfirmed"])}</span></p>
-                        <p>Deaths: <span class="color-danger" style="font-weight: 900;">${addCommas(country["TotalDeaths"])}</span></p>
+                        <p>Infected: <span class="color-default" style="font-weight: 900; font-size: 23px;">${addCommas(country["TotalConfirmed"])}</span></p>
+                        <p>Deaths: <span class="color-danger" style="font-weight: 900; font-size: 23px;">${addCommas(country["TotalDeaths"])}</span></p>
                     </div>
                     <div class="country-footer"><a href="./viewcountry.html?q=${country['Country']}">View full details</a></div>
                 </div>
